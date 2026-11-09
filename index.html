@@ -134,15 +134,153 @@
   .exp-item ul{ margin:0; padding-left:18px; color:var(--text-dim); font-size:0.96rem; }
   .exp-item li{ margin-bottom:6px; }
 
-  /* ---- Projects ---- */
-  .project{
-    padding:26px 0; border-top:1px solid var(--rule);
+  /* ---- Project Showcase ---- */
+
+.project{
+  padding:30px 0;
+  border-top:1px solid var(--rule);
+}
+
+.project:first-child{
+  border-top:none;
+  padding-top:0;
+}
+
+.project-card{
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  overflow:hidden;
+  transition:transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.project-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent-2);
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+}
+
+.project-image{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+  background:var(--surface-2);
+}
+
+.project-content{
+  padding:26px;
+}
+
+.project-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.project h3{
+  font-size:1.35rem;
+}
+
+.project .tag{
+  font-size:0.82rem;
+  color:var(--text-dim);
+  border:1px solid var(--rule);
+  padding:3px 10px;
+  border-radius:100px;
+  white-space:nowrap;
+}
+
+.project-description{
+  color:var(--text-dim);
+  margin-top:12px;
+  font-size:0.97rem;
+  max-width:70ch;
+}
+
+.project-subtitle{
+  margin-top:20px;
+  margin-bottom:8px;
+  font-size:0.9rem;
+  color:var(--text);
+  font-weight:600;
+}
+
+.tech-stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.tech{
+  font-size:0.82rem;
+  padding:5px 11px;
+  border-radius:100px;
+  border:1px solid var(--rule);
+  color:var(--accent-2);
+}
+
+.project-features{
+  margin:8px 0 0;
+  padding-left:20px;
+  color:var(--text-dim);
+  font-size:0.92rem;
+}
+
+.project-features li{
+  margin-bottom:5px;
+}
+
+.project-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.project-btn{
+  display:inline-block;
+  padding:9px 16px;
+  border-radius:4px;
+  text-decoration:none;
+  font-size:0.86rem;
+  border:1px solid var(--rule);
+  transition:all .2s;
+}
+
+.project-btn.primary{
+  background:var(--accent);
+  color:#1B211D;
+  border-color:var(--accent);
+  font-weight:600;
+}
+
+.project-btn.secondary:hover{
+  border-color:var(--accent-2);
+  color:var(--accent-2);
+}
+
+.project-btn.primary:hover{
+  opacity:.9;
+}
+
+@media(max-width:600px){
+
+  .project-image{
+    height:180px;
   }
-  .project:first-child{ border-top:none; padding-top:0; }
-  .project-head{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; }
-  .project h3{ font-size:1.2rem; }
-  .project .tag{ font-size:0.82rem; color:var(--text-dim); border:1px solid var(--rule); padding:3px 10px; border-radius:100px; white-space:nowrap; }
-  .project p{ color:var(--text-dim); margin-top:10px; font-size:0.97rem; max-width:68ch; }
+
+  .project-content{
+    padding:20px;
+  }
+
+  .project-head{
+    align-items:flex-start;
+  }
+
+}
 
   /* ---- Certificates / achievements ---- */
   .list-plain{ list-style:none; padding:0; margin:0; }
@@ -264,25 +402,208 @@
   </section>
 
   <section id="projects">
-    <div class="label">selected work</div>
-    <h2>Projects</h2>
 
-    <div class="project">
-      <div class="project-head">
-        <h3>Shoppable AI Interior Designer</h3>
-        <span class="tag">Semester IV</span>
+  <div class="label">selected work</div>
+
+  <h2>Projects</h2>
+
+  <p style="color:var(--text-dim); max-width:68ch; margin-top:-14px; margin-bottom:30px;">
+    A showcase of academic and technical projects where I apply
+    AI/ML, web development, and problem-solving skills to real-world ideas.
+  </p>
+
+
+  <!-- PROJECT 1 -->
+
+  <div class="project">
+
+    <div class="project-card">
+
+      <!-- CHANGE IMAGE NAME LATER -->
+      <img
+        class="project-image"
+        src="images/interior-designer.png"
+        alt="Shoppable AI Interior Designer project">
+
+      <div class="project-content">
+
+        <div class="project-head">
+
+          <h3>Shoppable AI Interior Designer</h3>
+
+          <span class="tag">
+            Semester IV
+          </span>
+
+        </div>
+
+
+        <p class="project-description">
+
+          An AI-powered application for smart room redesign and
+          realistic interior visualization. The system identifies
+          furniture interactively and connects users with shopping
+          options while preserving the room's original structure
+          during redesign.
+
+        </p>
+
+
+        <div class="project-subtitle">
+          Technologies
+        </div>
+
+        <div class="tech-stack">
+
+          <span class="tech">AI/ML</span>
+          <span class="tech">Computer Vision</span>
+          <span class="tech">Python</span>
+          <span class="tech">React</span>
+          <span class="tech">JavaScript</span>
+
+        </div>
+
+
+        <div class="project-subtitle">
+          Key Features
+        </div>
+
+        <ul class="project-features">
+
+          <li>AI-powered room redesign</li>
+
+          <li>Interactive furniture identification</li>
+
+          <li>Realistic interior visualization</li>
+
+          <li>Structure-aware room preservation</li>
+
+          <li>Shopping-oriented furniture discovery</li>
+
+        </ul>
+
+
+        <div class="project-buttons">
+
+          <a
+            class="project-btn primary"
+            href="YOUR_LIVE_DEMO_LINK"
+            target="_blank"
+            rel="noopener">
+            🚀 Live Demo
+          </a>
+
+          <a
+            class="project-btn secondary"
+            href="YOUR_GITHUB_REPOSITORY_LINK"
+            target="_blank"
+            rel="noopener">
+            💻 GitHub
+          </a>
+
+        </div>
+
       </div>
-      <p>An AI-powered app for smart room redesign and realistic interior visualization. It identifies furniture interactively and links it to shopping, while a structure-aware system keeps the room's layout intact as it generates a modern redesign.</p>
+
     </div>
 
-    <div class="project">
-      <div class="project-head">
-        <h3>Edu-Ranga</h3>
-        <span class="tag">Semester III · Team project</span>
+  </div>
+
+
+
+  <!-- PROJECT 2 -->
+
+  <div class="project">
+
+    <div class="project-card">
+
+      <img
+        class="project-image"
+        src="images/edu-ranga.png"
+        alt="Edu-Ranga gamified learning platform">
+
+      <div class="project-content">
+
+        <div class="project-head">
+
+          <h3>Edu-Ranga</h3>
+
+          <span class="tag">
+            Semester III · Team Project
+          </span>
+
+        </div>
+
+
+        <p class="project-description">
+
+          A gamified learning platform designed to improve student
+          engagement through interactive learning activities,
+          rewards, badges, and progress tracking.
+
+        </p>
+
+
+        <div class="project-subtitle">
+          Technologies
+        </div>
+
+        <div class="tech-stack">
+
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Database</span>
+
+        </div>
+
+
+        <div class="project-subtitle">
+          Key Features
+        </div>
+
+        <ul class="project-features">
+
+          <li>Gamified learning activities</li>
+
+          <li>Points and reward system</li>
+
+          <li>Student progress tracking</li>
+
+          <li>Achievement badges</li>
+
+          <li>Interactive learning experience</li>
+
+        </ul>
+
+
+        <div class="project-buttons">
+
+          <a
+            class="project-btn primary"
+            href="YOUR_EDU_RANGA_LIVE_LINK"
+            target="_blank"
+            rel="noopener">
+            🚀 Live Demo
+          </a>
+
+          <a
+            class="project-btn secondary"
+            href="YOUR_EDU_RANGA_GITHUB_LINK"
+            target="_blank"
+            rel="noopener">
+            💻 GitHub
+          </a>
+
+        </div>
+
       </div>
-      <p>A gamified learning platform built with a small team. Contributed interactive gameplay mechanics and a scalable reward system — badges and points — to boost student engagement and track progress.</p>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
 
   <section id="certificates">
     <div class="label">continuing to learn</div>
